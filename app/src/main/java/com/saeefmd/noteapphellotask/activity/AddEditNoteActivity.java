@@ -100,6 +100,12 @@ public class AddEditNoteActivity extends AppCompatActivity {
             priority = 0;
         }
 
+        if (title.trim(). isEmpty() || description.trim().isEmpty()) {
+
+            Toast.makeText(this, "Insert Title & Description", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Intent data = new Intent();
         data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
@@ -114,10 +120,4 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
         finish();
     }
-
-    private void updateNote() {
-
-    }
-
-
 }

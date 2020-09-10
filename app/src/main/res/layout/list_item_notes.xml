@@ -63,15 +63,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_centerInParent="true"
+            android:layout_toStartOf="@id/iv_star"
             android:layout_toEndOf="@id/view_divider"
-            android:layout_marginStart="8dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp">
 
             <TextView
                 android:id="@+id/tv_title_rv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Client meeting"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="@color/colorBlack"/>
 
             <TextView
@@ -81,6 +86,7 @@
                 android:layout_marginTop="4dp"
                 android:text="For technical revisions"
                 android:textSize="10sp"
+                android:maxLines="1"
                 android:textColor="@android:color/black"
                 android:ellipsize="end"/>
 

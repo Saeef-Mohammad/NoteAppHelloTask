@@ -67,8 +67,8 @@ public class NoteListActivity extends AppCompatActivity {
                 //Update RecycleView
                 noteAdapter.submitList(notes);
 
-                int count = notes.size();
-                updateNotesCount(count);
+                int noteCount = notes.size();
+                updateNotesCount(noteCount);
             }
         });
 
@@ -138,7 +138,7 @@ public class NoteListActivity extends AppCompatActivity {
 
             String title = data.getStringExtra(AddEditNoteActivity.EXTRA_TITLE);
             String description = data.getStringExtra(AddEditNoteActivity.EXTRA_DESCRIPTION);
-            int priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 1);
+            int priority = data.getIntExtra(AddEditNoteActivity.EXTRA_PRIORITY, 0);
 
             Note note = new Note(title, description, date, month, priority);
             note.setId(id);
@@ -148,12 +148,12 @@ public class NoteListActivity extends AppCompatActivity {
         }
     }
 
-    private void updateNotesCount(int count) {
+    private void updateNotesCount(int noteCount) {
 
         SharedPreferences notesCountSp = getSharedPreferences(MainActivity.SHARED_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = notesCountSp.edit();
 
-        editor.putInt(MainActivity.TOTAL_NOTES_COUNT, count).apply();
+        editor.putInt(MainActivity.TOTAL_NOTES_COUNT, noteCount).apply();
     }
 
     private String getDate() {
