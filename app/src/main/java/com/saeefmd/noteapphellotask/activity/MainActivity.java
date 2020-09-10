@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences notesCountSp = getSharedPreferences(MainActivity.SHARED_PREFERENCE, MODE_PRIVATE);
 
-        int totalNotes = notesCountSp.getInt(MainActivity.TOTAL_NOTES_COUNT, 0);
+        int totalNotes = notesCountSp.getInt(MainActivity.TOTAL_NOTES_COUNT, 5);
 
         totalNotesTv.setText(String.valueOf(totalNotes));
     }
