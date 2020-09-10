@@ -6,6 +6,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import com.saeefmd.noteapphellotask.R;
 
 public class SplashActivity extends AppCompatActivity {
+
+    private final int SPLASH_DISPLAY_LENGTH = 3500;
 
     private TextView easyNoteTv;
 
@@ -38,6 +41,16 @@ public class SplashActivity extends AppCompatActivity {
         easyNoteTv.setText(spannableString);
 
         crossFade();
+
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, SPLASH_DISPLAY_LENGTH);
 
         Button startBt = findViewById(R.id.bt_get_started);
 

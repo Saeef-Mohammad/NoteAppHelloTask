@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -98,6 +99,14 @@ public class NoteListActivity extends AppCompatActivity {
                 intent.putExtra(AddEditNoteActivity.EXTRA_PRIORITY, note.getPriority());
 
                 startActivityForResult(intent, EDIT_NOTE_REQUEST);
+            }
+        });
+
+        ImageButton calenderIb = findViewById(R.id.ib_calender);
+        calenderIb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
