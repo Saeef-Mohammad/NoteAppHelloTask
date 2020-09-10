@@ -75,7 +75,7 @@ public class NoteAdapter extends ListAdapter<Note, NoteAdapter.NoteHolder> {
         if (currentNote.getPriority() == 1) {
             holder.ivStar.setVisibility(View.VISIBLE);
         } else {
-            holder.ivStar.setVisibility(View.GONE);
+            holder.ivStar.setVisibility(View.INVISIBLE);
         }
     }
 
